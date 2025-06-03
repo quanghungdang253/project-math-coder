@@ -77,6 +77,8 @@ flutter:
   - assets/math-form/img-2.jpg
   - assets/math-form/img-3.jpg
   - assets/math-form/img-4.gif
+  - assets/theory-data/class-one/class-one-unit-one.json
+  - assets/theory-data/class-one/class-one-unit-two.json
 
 
 

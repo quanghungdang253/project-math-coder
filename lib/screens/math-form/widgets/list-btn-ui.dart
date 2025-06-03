@@ -2,6 +2,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../widgets/selection-list.dart';
 import './list-btn-ui-style.dart';
@@ -18,12 +19,15 @@ class listBtnUI extends StatelessWidget {
                 spacing: 20,
                   children: dataBtn.map((item){
                           return selectionList(
+                            
                             colorGradian1:  (item['nameClass'] == "oddNumber") ?    const Color.fromARGB(255, 3, 255, 238) : Colors.deepOrange,
                             colorGradian2:   (item['nameClass'] == "oddNumber") ?    const Color.fromARGB(255, 135, 216, 4) : Colors.limeAccent,        
                             borderRadius: 10,
                             width: 320.w,
-                            height: 100.h,
-                             onTap: (){},
+                            height: 140.h,
+                             onTap: (){
+                                  context.push("/theory-page/${item['enpoint-class']}/${item['name-json']}/${item['nameAppBar']}");
+                             },
                               child:   Container(
                                 padding: EdgeInsets.all(10),
                              child: Flex(
@@ -31,17 +35,16 @@ class listBtnUI extends StatelessWidget {
                                 children: [
                                     Container(
                                       width: 100.w,
-                                      height: 100.h,
+                                   height: double.infinity,
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.all(
-                                          Radius.circular(20)
+                                              Radius.circular(20)
                                         ),
                                         child:Image.network(
                                           item['img'],
                                           fit: BoxFit.cover,
                                        ),
-                                      )
-                                    
+                                      )                                 
                                     ),
                                     Container(
                                       width: 150.w,
@@ -59,7 +62,7 @@ class listBtnUI extends StatelessWidget {
                                           Radius.circular(999)
                                         ),
                                           border: Border.all(
-                                             color: Colors.black
+                                               color: Colors.black
                                           )
                                       ),
                                       child: Icon(Icons.arrow_forward),

@@ -74,7 +74,7 @@ String  getNamAppBar = "";
                     child: Column(
                       children: [
                         Container(
-                          child: introduleUi(nameClass: widget.nameClass),
+                              child: introduleUi(nameClass: widget.nameClass),
                         ),
                         
                           Container(
